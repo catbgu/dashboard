@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<!--[if IE 8]> <html lang="en" class="ie8"> <![endif]-->
+<!--[if IE 9]> <html lang="en" class="ie9"> <![endif]-->
+<!--[if !IE]><!--> <html lang="en"> <!--<![endif]-->
+<!-- BEGIN HEAD -->
+<head>
+	<meta charset="utf-8" />
+	<title>Inspired | Dashboard</title>
+
+	<link href="assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+	<link href="assets/plugins/bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet" type="text/css"/>
+	<link href="assets/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
+	<link href="assets/css/style-metro.css" rel="stylesheet" type="text/css"/>
+	<link href="assets/css/style.css" rel="stylesheet" type="text/css"/>
+	<link href="assets/css/style-responsive.css" rel="stylesheet" type="text/css"/>
+	<link href="assets/css/custom.css" rel="stylesheet" type="text/css"/>	
+	<link href="assets/css/themes/default.css" rel="stylesheet" type="text/css" id="style_color"/>
+	<link href="assets/plugins/uniform/css/uniform.default.css" rel="stylesheet" type="text/css"/>
+	<link rel="stylesheet" type="text/css" href="assets/plugins/jquery-ui/jquery-ui-1.10.1.custom.min.css"/>
+	<link rel="stylesheet" type="text/css" href="assets/plugins/select2/select2.css" />
+	<link rel="stylesheet" type="text/css" href="assets/plugins/select2/select2_metro.css" />
+	<link rel="stylesheet" type="text/css" href="assets/plugins/bootstrap-fileupload/bootstrap-fileupload.css" />
+	<link href="assets/plugins/bootstrap-switch/static/stylesheets/bootstrap-switch-metro.css" rel="stylesheet" type="text/css"/>
+
+	<link rel="stylesheet" type="text/css" href="assets/plugins/jquery-tags-input/jquery.tagsinput.css" />	
+	<link rel="shortcut icon" href="favicon.ico" />
+</head>
+<body class="page-header-fixed page-sidebar-fixed">
+	<!-- BEGIN HEADER -->   
+	<div class="header navbar navbar-inverse navbar-fixed-top">
+		<!-- BEGIN TOP NAVIGATION BAR -->
+		<div class="navbar-inner">
+			<div class="container-fluid">
+				<!-- BEGIN LOGO -->
+				<a class="brand" href="landing.html">
+				<img src="assets/img/logo.png" alt="logo" />
+				</a>
+				<!-- END LOGO -->
+				<!-- BEGIN RESPONSIVE MENU TOGGLER -->
+				<a href="javascript:;" class="btn-navbar collapsed" data-toggle="collapse" data-target=".nav-collapse">
+				<img src="assets/img/menu-toggler.png" alt="" />
+				</a>          
+				<!-- END RESPONSIVE MENU TOGGLER -->            
+				<!-- BEGIN TOP NAVIGATION MENU -->              
+				<ul class="nav pull-right">
+					<!-- BEGIN USER LOGIN DROPDOWN -->
+					<li class="dropdown user">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
+						<img alt="" src="assets/img/avatar.png" />
+						<span class="username" id="curator-name"></span>
+						<i class="icon-angle-down"></i>
+						</a>
+						<ul class="dropdown-menu">
+							<li><a href="extra_profile.html"><i class="icon-user"></i> My Profile</a></li>
+							<li class="divider"></li>
+							<li><a href="javascript:;" id="trigger_fullscreen"><i class="icon-move"></i> Full Screen</a></li>
+							<li><a href="logout.html"><i class="icon-key"></i> Log Out</a></li>
+						</ul>
+					</li>
+				</ul>
+				<!-- END TOP NAVIGATION MENU --> 
+			</div>
+		</div>
+		<!-- END TOP NAVIGATION BAR -->
+	</div>
+	<!-- END HEADER -->
+	<!-- BEGIN CONTAINER -->   
+	<div class="page-container row-fluid">
+		<!-- BEGIN SIDEBAR -->
+		<div class="page-sidebar nav-collapse collapse">
+			<!-- BEGIN SIDEBAR MENU -->        
+			<ul class="page-sidebar-menu">
+				<li class="active start">
+					<a href="landing.html">
+						<i class="icon-home"></i><span class="title">New Curation</span>
+					</a>
+				</li>
+				<li>
+					<a href="add-edit_artist.html">
+						<i class="icon-user"></i><span class="title">Add/Edit Artist</span>
+					</a>					
+				</li>
+				<li class="last">
+					<a href="my_curations.html">
+						<i class="icon-folder-open"></i><span class="title">My Curations</span>
+					</a>					
+				</li>
+			</ul>
+			<!-- END SIDEBAR MENU -->
+		</div>
+		<!-- END SIDEBAR -->
+		<!-- BEGIN PAGE -->
+		<div class="page-content">
+			<!-- BEGIN SAMPLE PORTLET CONFIGURATION MODAL FORM-->
+			<div id="portlet-config" class="modal hide">
+				<div class="modal-header">
+					<button data-dismiss="modal" class="close" type="button"></button>
+					<h3>portlet Settings</h3>
+				</div>
+				<div class="modal-body">
+					<p>Here will be a configuration form</p>
+				</div>
+			</div>
+			<!-- END SAMPLE PORTLET CONFIGURATION MODAL FORM-->
+			<!-- BEGIN PAGE CONTAINER-->
+			<div class="container-fluid">
+				<!-- BEGIN PAGE HEADER-->
+				<div class="row-fluid">
+					<div class="span12">
+						<!-- BEGIN PAGE TITLE-->
+						<h3 class="page-title">
+							Curate A New Music Video
+						</h3>
+						<!-- END PAGE TITLE-->
+					</div>
+				</div>
+				<!-- END PAGE HEADER-->
+				<!-- BEGIN PAGE CONTENT-->
+				<div class="row-fluid">
+					<div class="span12">
+						<div class="portlet box yellow" id="form_wizard_1">
+							<div class="portlet-title">
+								<div class="caption">
+									<i class="icon-film"></i><span class="step-title">Step 1 of 3</span>
+								</div>
+							</div>
+							<div class="portlet-body form">
+								<form action="#" class="form-horizontal" id="submit_form" name="music_video_form">
+									<div class="form-wizard">
+										<div class="navbar steps">
+											<div class="navbar-inner">
+												<ul class="row-fluid">
+													<li class="span4">
+														<a href="#tab1" data-toggle="tab" class="step active">
+														<span class="number">1</span>
+														<span class="desc"><i class="icon-ok"></i> Video URL</span>   
+														</a>
+													</li>
+													<li class="span4">
+														<a href="#tab2" data-toggle="tab" class="step">
+														<span class="number">2</span>
+														<span class="desc"><i class="icon-ok"></i> Add Looks</span>   
+														</a>
+													</li>
+													<li class="span4">
+														<a href="#tab3" data-toggle="tab" class="step">
+														<span class="number">3</span>
+														<span class="desc"><i class="icon-ok"></i> Page SEO</span>   
+														</a>
+													</li>
+												</ul>
+											</div>
+										</div>
+										<div class="tab-content">
+											<div class="alert alert-error hide">
+												<button class="close" data-dismiss="alert"></button>
+												<p>You have some form errors. Please check below.</p>
+											</div>
+											<div class="alert alert-success hide">
+												<button class="close" data-dismiss="alert"></button>
+												Your form validation is successful!
+											</div>
+											<div class="tab-pane active" id="tab1">
+												<h3 class="block">Enter the Youtube video ID or the full URL</h3>
+												<div class="control-group">
+													<label class="control-label">Required<span class="required">*</span></label>
+													<div class="controls">
+														<input type="text" class="span7 m-wrap" id="youtubeID"/>
+    													<a id='youtube-but' class="btn icn-only" href="#"><i class="icon-search m-icon"></i> Find Video </a>
+														<div class="row-fluid" id="video_details_panel">
+															<div class="span12">
+																<table id="user" class="table table-bordered table-striped">
+																	<tbody>
+																		<tr>
+																			<td style="width:25%">Artist</td>
+																			<td style="width:75%" class="artist">
+																			    <select id="artist" class="span9" multiple>
+																			    <!-- Artists fetching from custom-landing.js !-->
+																			    </select>  
+																				<a  class="btn" href="#form_modal10" data-toggle="modal" style="margin-left: 5px;"><i class="icon-plus"></i> Add New </a>   
+
+																				<div id="form_modal10" class="modal hide fade" role="dialog" aria-labelledby="myModalLabel10" aria-hidden="true">
+																					<div class="modal-header">
+																						<button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+																						<h3 id="myModalLabel10">Add New Music Artist</h3>
+																					</div>
+
+																					<div class="modal-body">
+																						<div class="row-fluid">
+																							<form action="#" class="form-horizontal" id="artist_image_form">
+
+																								<div class="control-group">
+																									<label class="control-label" id="control-label-artist">Artist Name</label>
+																									<div class="controls">
+																										<input type="text" class="span12 m-wrap" id="new_artist_name"/>
+																									</div>
+																								</div>
+
+																								<div class="control-group">
+																									<label class="control-label">Image Upload</label>
+																									<div class="controls">
+																										<div class="fileupload fileupload-new" data-provides="fileupload"><input type="hidden" value="" name="">
+																											<div class="fileupload-new thumbnail" style="width: 200px; height: 150px;">
+																												<img src="http://www.placehold.it/200x150/EFEFEF/AAAAAA&amp;text=no+image" alt="">
+																											</div>
+																											<div class="fileupload-preview fileupload-exists thumbnail" style="max-width: 200px; max-height: 150px; line-height: 20px;"></div>
+																											<div>
+																												<span class="btn btn-file"><span class="fileupload-new">Select image</span>
+																												<span class="fileupload-exists">Change</span>
+																												<input type="file" class="default" name="datafile"></span>
+																												<a href="#" id="remove-new-artist-btn" class="btn fileupload-exists" data-dismiss="fileupload">Remove</a>
+																											</div>
+																											<div id="artist_image_upload_iframe"></div>
+																										</div>
+																									</div>
+																								</div>		
+																								<div class="modal-footer">
+																									<button id="reset_artist_image_form" class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+																									<button type="submit" class="btn green btn-primary" id="submit-artist" data-dismiss="modal">Save</button>
+																								</div>				
+																							</form>
+																							</div>
+																						</div>
+																					</div>
+																					
+																				</div>
+																			</td>
+																		</tr>
+																		<tr>
+																			<td>Video Title</td>
+																			<td class="video_title">
+																				<!-- <a href="#" id="text" data-type="text" data-pk="1" data-original-title="Edit Video Title"></a> -->
+																			<input type="text" class="span12 m-wrap" id="video_title_id"/>
+																			</td>
+																		</tr>
+																		<tr>
+																			<td>Full Video Title</td>
+																			<td class="full_video_title"></td>
+																		</tr>
+																		<tr>
+																			<td>Featured Video</td>
+																			<td >
+																				<div class="switch switch-mini">
+																					<input type="checkbox" checked class="toggle"/>
+																				</div>
+																			</td>
+																		</tr>
+																		<tr>
+																			<td>Video Cover Image</td>
+																			<td>
+																				<div class="fileupload fileupload-new" data-provides="fileupload" id="video_cover_image_changed">
+																					<input type="hidden" value="" name="">
+																					<div class="fileupload-new thumbnail" style="width: 120px; height: 90px;">
+																						<img class='video_cover_image' src="http://www.placehold.it/200x150/EFEFEF/AAAAAA&amp;text=no+image" alt="">
+																					</div>
+																					<div class="fileupload-preview fileupload-exists thumbnail" style="max-width: 120px; max-height: 90px; line-height: 20px;" id="video_cover_image_upload"></div>
+																					<div>
+																						<span class="btn btn-file" style="float: left;"><span class="fileupload-new"><i class="icon-picture"></i> Select other </span>
+																						<span class="fileupload-exists">Change</span>
+																						<input type="file" class="default" name="video_cover"></span>
+																						<a href="#" class="btn fileupload-exists" data-dismiss="fileupload">Remove</a>
+																					</div>
+																					<div id="video_image_upload_iframe"></div>
+																				</div>
+																			</td>
+																		</tr>
+																		<tr>
+																			<td>Watch on Youtube</td>
+																			<td class="watch_on_youtube"></td>
+																		</tr>				
+																	</tbody>
+																</table>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+											<div class="tab-pane" id="tab2">
+												<div class="looks">
+													<div class="portlet box green" id="look_0">
+														<div class="portlet-title">
+															<div class="caption">
+																<input type="text" class="look-description span11 m-wrap" data-trigger="hover" data-original-title="Input a Brief Description" placeholder="Look Description">        
+															</div>
+															<div class="tools">
+																<a href="javascript:;" class="collapse"></a>
+															</div>
+														</div>
+
+														<div class="portlet-body">
+															<div class="control-group">
+																<div class="controls find_item_form">
+																	<input type="text" class="span6 m-wrap product" name="product_0"/>
+																	<!-- <a class="btn icn-only find-item-but" href="#"><i class="icon-search m-icon"></i> Search Item </a> -->
+																	<a class="btn icn-only find-item-but" href="#skimlinks_results_modal" data-toggle="modal" ><i class="icon-search m-icon" data-toggle="modal"></i> Search Item </a>
+																	<a class="btn icn-only add_product black" href="#form_manual_product_entry" data-toggle="modal" onClick="addFromLinkClicked(this)"><i class="icon-link m-icon"></i> Add From Link </a>	
+																</div>
+															</div>
+
+															<div class="alert alert-block alert-success fade in product_block">
+																<button type="button" class="close" data-dismiss="alert"></button>
+																<div class="looks_details_panel"></div>
+															</div>
+														</div>
+													</div>												
+												</div>
+
+												<!-- modal: Skimlinks search results -->
+												<div id="skimlinks_results_modal" class="modal modal-wide hide fade" role="dialog" aria-labelledby="myform_manual_product_entry" aria-hidden="true">
+													<div class="modal-header">
+														<h3>Search results for: </h3>
+													</div>
+													<div class="modal-body">
+														<div class="row-fluid">
+															<form action="#" class="form-horizontal looks_details_panel_form"></form>
+														</div>
+													</div>
+													<div class="modal-footer">
+														<button class="btn" id="close_skimlinks_results" data-dismiss="modal" aria-hidden="true">Cancel</button>
+														<button class="btn green btn-primary add_item_btn" id="save_skimlinks_results" data-dismiss="modal">Add Products</button>
+													</div>
+												</div>	
+
+												<!-- modal: manual product entry -->
+												<div id="form_manual_product_entry" class="modal hide fade" role="dialog" aria-labelledby="myform_manual_product_entry" aria-hidden="true">
+													<div class="modal-header">
+														<h3 id="myform_manual_product_entry_label">Add New Product</h3>
+													</div>
+													<div class="modal-body">
+														<div class="row-fluid">
+															<form action="#" class="form-horizontal" name="add_new_product_form">
+																<div class="control-group">
+																	<label class="control-label">Product Title</label>
+																	<div class="controls">
+																		<input type="text" class="span12 m-wrap" id="new_product_title"/>
+																	</div>
+																</div>
+																<div class="control-group">
+																	<label class="control-label">Product Description</label>
+																	<div class="controls">
+																		<textarea class="span12 m-wrap" rows="3" id="new_product_description"></textarea>
+																	</div>
+																</div>
+																<div class="control-group">
+																	<label class="control-label">Retailer Name</label>
+																	<div class="controls">
+																		<input type="text" class="span12 m-wrap" id="new_retailer_name"/>
+																	</div>
+																</div>				
+																<div class="control-group">
+																	<label class="control-label">Product Page URL</label>
+																	<div class="controls">
+																		<input type="text" class="span12 m-wrap" id="new_retailer_url"/>
+																	</div>
+																</div>
+																<div class="control-group">
+																	<label class="control-label">Price</label>
+																	<div class="controls">
+																		<input type="text" class="span12 m-wrap" id="new_price"/>
+																	</div>
+																</div>
+
+																<div class="control-group">
+																	<label class="control-label">Product Image</label>
+																	<div class="controls">
+																		<div class="fileupload fileupload-new" data-provides="fileupload"><input type="hidden" value="" name="">
+																			<div class="fileupload-new thumbnail" style="width: 200px; height: 150px;">
+																				<img id="new_image" src="http://www.placehold.it/200x150/EFEFEF/AAAAAA&amp;text=no+image" alt="">
+																			</div>
+																			<div class="fileupload-preview fileupload-exists thumbnail" style="max-width: 200px; max-height: 150px; line-height: 20px;"></div>
+																			<div>
+																				<span class="btn btn-file"><span class="fileupload-new">Select image</span>
+																				<span class="fileupload-exists">Change</span>
+																				<input type="file" class="default" name="add_new_product"></span>
+																				<a href="#" class="btn fileupload-exists" data-dismiss="fileupload">Remove</a>
+																			</div>
+																			<div id="add_new_item_upload_iframe"></div>
+																		</div>
+																	</div>
+																</div>							
+															</form>
+														</div>
+													</div>
+													<div class="modal-footer">
+														<button class="btn" id="close_new_item" data-dismiss="modal" aria-hidden="true">Cancel</button>
+														<button class="btn green btn-primary" id="save_new_item" >Save</button>
+													</div>
+												</div>											
+
+												<!-- confirmation popup: remove selected product from a look -->
+												<div id="dialog_confirm" title="Remove Product Choice?" class="hide">
+													<p><span class="icon icon-warning-sign"></span>
+														Do you want to proceed?
+													</p>
+												</div>													
+												<a href="#" class="btn red-stripe blue add-look"><i class="icon-plus"></i>Add Look</a>
+											</div>
+											<div class="tab-pane" id="tab3">
+												<h3 class="block">Add SEO elements tailored to this music video:</h3>
+												<div class="portlet-body form">
+													<form action="#" class="form-seo">
+														<div class="control-group">
+															<label class="control-label seo-label">Page description:</label>
+															<textarea id="seo-description" class="form-control" rows="3"></textarea>
+														</div>
+														<div class="control-group">
+															<label class="control-label seo-label">Page keywords:</label>
+															<input id="seo-tags" type="text" class="m-wra tags" value="" />
+														</div>														
+													</form>
+												</div>
+												<div id="create_video_music_page"></div>
+											</div>
+										</div>
+										<div class="form-actions clearfix">
+											<a href="javascript:;" class="btn button-previous">
+											<i class="m-icon-swapleft"></i> Back 
+											</a>
+											<a href="javascript:;" class="btn green button-next">
+											Continue <i class="m-icon-swapright m-icon-white"></i>
+											</a>
+											<a href="javascript:;" class="btn blue button-submit">
+											Submit <i class="icon-circle-arrow-up m-icon-white"></i>
+											</a>
+										</div>									
+									</div>
+								</form>
+
+								<!-- modal -->
+								<a id="show_modal" class="btn yellow hide" data-toggle="modal" href="#static"></a>
+								<div id="static" class="modal hide fade" tabindex="-1" data-backdrop="static" data-keyboard="false">
+									<div class="modal-body">
+										<p></p>
+									</div>
+									<div class="modal-footer">
+										<button type="button" data-dismiss="modal" class="btn green">OK</button>
+									</div>
+								</div>  								
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- END PAGE CONTENT-->
+			</div>
+			<!-- END PAGE CONTAINER--> 
+		</div>
+		<!-- END PAGE -->    
+	</div>
+	<!-- END CONTAINER -->
+
+	<!-- BEGIN FOOTER -->
+	<div class="footer">
+		<div class="footer-inner">
+			2014 &copy; Invidio Inc.
+		</div>
+		<div class="footer-tools">
+			<span class="go-top">
+			<i class="icon-angle-up"></i>
+			</span>
+		</div>
+	</div>
+	
+	<script src="assets/plugins/jquery-1.10.1.min.js" type="text/javascript"></script>
+	<script src="assets/plugins/jquery-migrate-1.2.1.min.js" type="text/javascript"></script>
+	<script src="assets/plugins/jquery-ui/jquery-ui-1.10.1.custom.min.js" type="text/javascript"></script>      
+	<script src="assets/plugins/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+	<script src="assets/plugins/bootstrap-hover-dropdown/twitter-bootstrap-hover-dropdown.min.js" type="text/javascript" ></script>
+	<script src="assets/plugins/jquery.blockui.min.js" type="text/javascript"></script>  
+	<script src="assets/plugins/jquery.cookie.min.js" type="text/javascript"></script>
+	<script src="assets/plugins/uniform/jquery.uniform.min.js" type="text/javascript" ></script>
+
+	<script type="text/javascript" src="assets/plugins/jquery-validation/dist/jquery.validate.js"></script>
+	<script type="text/javascript" src="assets/plugins/bootstrap-wizard/jquery.bootstrap.wizard.min.js"></script>
+	<script type="text/javascript" src="assets/plugins/select2/select2.min.js"></script>
+
+	<script type="text/javascript" src="assets/plugins/bootstrap-fileupload/bootstrap-fileupload.js"></script>
+	<script type="text/javascript" src="assets/plugins/chosen-bootstrap/chosen/chosen.jquery.min.js"></script>
+	<script type="text/javascript" src="assets/plugins/bootstrap-toggle-buttons/static/js/jquery.toggle.buttons.js"></script>
+	<script type="text/javascript" src="assets/plugins/bootstrap-datepicker/js/bootstrap-datepicker.js"></script>
+	<script type="text/javascript" src="assets/plugins/bootstrap-datetimepicker/js/bootstrap-datetimepicker.js"></script>
+	<script type="text/javascript" src="assets/plugins/clockface/js/clockface.js"></script>
+	<script type="text/javascript" src="assets/plugins/bootstrap-daterangepicker/date.js"></script>
+	<script type="text/javascript" src="assets/plugins/bootstrap-daterangepicker/daterangepicker.js"></script> 
+	<script src="assets/plugins/jquery-tags-input/jquery.tagsinput.min.js" type="text/javascript" ></script>
+	<script src="assets/plugins/bootstrap-switch/static/js/bootstrap-switch.js" type="text/javascript" ></script>
+	<script type="text/javascript" src="assets/plugins/ckeditor/ckeditor.js"></script>  
+
+	<script src="assets/scripts/app.js"></script>
+	<script src="assets/scripts/localStg.js"></script>
+	<script src="assets/scripts/form-wizard.js"></script> 
+	<script src="assets/scripts/custom-landing.js"></script>  
+	<script src="assets/scripts/fileUpload.js"></script> 
+
+	<script type="text/javascript" src="http://static.stackmob.com/js/stackmob-js-0.9.2-bundled-min.js"></script>
+	<script type="text/javascript">
+		StackMob.init({
+		publicKey:        '9c425dc3-688f-420d-804c-9b27f3856353',
+		apiVersion:       0
+		});
+	</script>
+</body>
+</html>

@@ -1,0 +1,169 @@
+[20-Jan-2014 10:21:25 America/Denver] PHP Notice:  Undefined index: extension in /home2/eraytony/public_html/dashboard/add_new_item.php on line 28
+[20-Jan-2014 10:24:24 America/Denver] PHP Notice:  Undefined index: extension in /home2/eraytony/public_html/dashboard/add_new_item.php on line 28
+[20-Jan-2014 10:27:55 America/Denver] PHP Notice:  Undefined index: extension in /home2/eraytony/public_html/dashboard/add_new_item.php on line 28
+[20-Jan-2014 10:36:59 America/Denver] PHP Notice:  Undefined index: extension in /home2/eraytony/public_html/dashboard/add_new_item.php on line 28
+[20-Jan-2014 11:04:16 America/Denver] PHP Notice:  Undefined index: extension in /home2/eraytony/public_html/dashboard/add_new_item.php on line 28
+[20-Jan-2014 12:24:03 America/Denver] PHP Warning:  fopen(/home2/eraytony/public_html/invidio/templates/artists/austin-mahone/What About Love.html): failed to open stream: No such file or directory in /home2/eraytony/public_html/dashboard/create_video_music_page.php on line 12
+[20-Jan-2014 14:14:52 America/Denver] PHP Warning:  fopen(http://www.eraytonyali.com/invidio/static/img/music/artists/austin-mahone/What About Love.png): failed to open stream: HTTP request failed! HTTP/1.1 404 Not Found
+ in /home2/eraytony/public_html/dashboard/video_cover_image_upload_api.php on line 13
+[20-Jan-2014 14:24:26 America/Denver] PHP Warning:  fopen(http://www.eraytonyali.com/invidio/static/img/music/artists/austin-mahone/What About Love.png): failed to open stream: HTTP request failed! HTTP/1.1 404 Not Found
+ in /home2/eraytony/public_html/dashboard/video_cover_image_upload_api.php on line 13
+[20-Jan-2014 14:39:34 America/Denver] PHP Warning:  md5_file(0): failed to open stream: No such file or directory in /home2/eraytony/public_html/dashboard/video_cover_image_upload_api.php on line 13
+[20-Jan-2014 14:39:34 America/Denver] PHP Warning:  md5_file(http://www.eraytonyali.com/invidio/static/img/music/artists/austin-mahone/What About Love.png): failed to open stream: HTTP request failed! HTTP/1.1 404 Not Found
+ in /home2/eraytony/public_html/dashboard/video_cover_image_upload_api.php on line 14
+[20-Jan-2014 14:40:03 America/Denver] PHP Warning:  md5_file(0): failed to open stream: No such file or directory in /home2/eraytony/public_html/dashboard/video_cover_image_upload_api.php on line 13
+[20-Jan-2014 14:41:27 America/Denver] PHP Warning:  md5_file(0): failed to open stream: No such file or directory in /home2/eraytony/public_html/dashboard/video_cover_image_upload_api.php on line 13
+[20-Jan-2014 14:44:30 America/Denver] PHP Warning:  md5_file(0): failed to open stream: No such file or directory in /home2/eraytony/public_html/dashboard/video_cover_image_upload_api.php on line 13
+[20-Jan-2014 14:45:11 America/Denver] PHP Warning:  md5_file(0): failed to open stream: No such file or directory in /home2/eraytony/public_html/dashboard/video_cover_image_upload_api.php on line 13
+[20-Jan-2014 14:46:57 America/Denver] PHP Warning:  md5_file(0): failed to open stream: No such file or directory in /home2/eraytony/public_html/dashboard/video_cover_image_upload_api.php on line 13
+[20-Jan-2014 14:48:08 America/Denver] PHP Warning:  md5_file(0): failed to open stream: No such file or directory in /home2/eraytony/public_html/dashboard/video_cover_image_upload_api.php on line 13
+[20-Jan-2014 14:52:13 America/Denver] PHP Notice:  Undefined index: extension in /home2/eraytony/public_html/dashboard/video_cover_image_upload.php on line 29
+[20-Jan-2014 14:53:23 America/Denver] PHP Notice:  Undefined index: extension in /home2/eraytony/public_html/dashboard/video_cover_image_upload.php on line 29
+[20-Jan-2014 14:58:40 America/Denver] PHP Warning:  md5_file(0): failed to open stream: No such file or directory in /home2/eraytony/public_html/dashboard/video_cover_image_upload_api.php on line 13
+[20-Jan-2014 14:58:54 America/Denver] PHP Warning:  md5_file(0): failed to open stream: No such file or directory in /home2/eraytony/public_html/dashboard/video_cover_image_upload_api.php on line 13
+[20-Jan-2014 15:00:26 America/Denver] PHP Warning:  md5_file(0): failed to open stream: No such file or directory in /home2/eraytony/public_html/dashboard/video_cover_image_upload_api.php on line 13
+[20-Jan-2014 15:00:46 America/Denver] PHP Warning:  md5_file(0): failed to open stream: No such file or directory in /home2/eraytony/public_html/dashboard/video_cover_image_upload_api.php on line 13
+[20-Jan-2014 15:01:40 America/Denver] PHP Warning:  md5_file(0): failed to open stream: No such file or directory in /home2/eraytony/public_html/dashboard/video_cover_image_upload_api.php on line 13
+[20-Jan-2014 15:01:40 America/Denver] PHP Warning:  md5_file(http://www.eraytonyali.com/invidio/static/img/music/artists/austin-mahone/What About Love.png): failed to open stream: HTTP request failed! HTTP/1.1 404 Not Found
+ in /home2/eraytony/public_html/dashboard/video_cover_image_upload_api.php on line 14
+[20-Jan-2014 15:02:19 America/Denver] PHP Warning:  md5_file(0): failed to open stream: No such file or directory in /home2/eraytony/public_html/dashboard/video_cover_image_upload_api.php on line 13
+[20-Jan-2014 15:03:19 America/Denver] PHP Warning:  md5_file(0): failed to open stream: No such file or directory in /home2/eraytony/public_html/dashboard/video_cover_image_upload_api.php on line 13
+[20-Jan-2014 15:03:19 America/Denver] PHP Warning:  md5_file(http://www.eraytonyali.com/invidio/static/img/music/artists/austin-mahone/What About Love.png): failed to open stream: HTTP request failed! HTTP/1.1 404 Not Found
+ in /home2/eraytony/public_html/dashboard/video_cover_image_upload_api.php on line 14
+[20-Jan-2014 15:07:35 America/Denver] PHP Warning:  md5_file(0): failed to open stream: No such file or directory in /home2/eraytony/public_html/dashboard/video_cover_image_upload_api.php on line 13
+[20-Jan-2014 15:07:36 America/Denver] PHP Warning:  md5_file(http://www.eraytonyali.com/invidio/static/img/music/artists/austin-mahone/What About Love.png): failed to open stream: HTTP request failed! HTTP/1.1 404 Not Found
+ in /home2/eraytony/public_html/dashboard/video_cover_image_upload_api.php on line 14
+[20-Jan-2014 15:07:49 America/Denver] PHP Warning:  md5_file(0): failed to open stream: No such file or directory in /home2/eraytony/public_html/dashboard/video_cover_image_upload_api.php on line 13
+[20-Jan-2014 15:07:49 America/Denver] PHP Warning:  md5_file(http://www.eraytonyali.com/invidio/static/img/music/artists/austin-mahone/What About Love.png): failed to open stream: HTTP request failed! HTTP/1.1 404 Not Found
+ in /home2/eraytony/public_html/dashboard/video_cover_image_upload_api.php on line 14
+[20-Jan-2014 15:11:43 America/Denver] PHP Warning:  md5_file(0): failed to open stream: No such file or directory in /home2/eraytony/public_html/dashboard/video_cover_image_upload_api.php on line 13
+[20-Jan-2014 15:11:44 America/Denver] PHP Warning:  md5_file(http://www.eraytonyali.com/invidio/static/img/music/artists/austin-mahone/What About Love.png): failed to open stream: HTTP request failed! HTTP/1.1 404 Not Found
+ in /home2/eraytony/public_html/dashboard/video_cover_image_upload_api.php on line 14
+[20-Jan-2014 15:15:53 America/Denver] PHP Warning:  md5_file(0): failed to open stream: No such file or directory in /home2/eraytony/public_html/dashboard/video_cover_image_upload_api.php on line 13
+[20-Jan-2014 15:15:53 America/Denver] PHP Warning:  md5_file(http://www.eraytonyali.com/invidio/static/img/music/artists/austin-mahone/What About Love.png): failed to open stream: HTTP request failed! HTTP/1.1 404 Not Found
+ in /home2/eraytony/public_html/dashboard/video_cover_image_upload_api.php on line 14
+[20-Jan-2014 15:17:46 America/Denver] PHP Warning:  md5_file(0): failed to open stream: No such file or directory in /home2/eraytony/public_html/dashboard/video_cover_image_upload_api.php on line 13
+[20-Jan-2014 15:17:46 America/Denver] PHP Warning:  md5_file(http://www.eraytonyali.com/invidio/static/img/music/artists/austin-mahone/What About Love.png): failed to open stream: HTTP request failed! HTTP/1.1 404 Not Found
+ in /home2/eraytony/public_html/dashboard/video_cover_image_upload_api.php on line 14
+[20-Jan-2014 15:20:14 America/Denver] PHP Warning:  md5_file(0): failed to open stream: No such file or directory in /home2/eraytony/public_html/dashboard/video_cover_image_upload_api.php on line 13
+[20-Jan-2014 15:20:15 America/Denver] PHP Warning:  md5_file(http://www.eraytonyali.com/invidio/static/img/music/artists/austin-mahone/What About Love.png): failed to open stream: HTTP request failed! HTTP/1.1 404 Not Found
+ in /home2/eraytony/public_html/dashboard/video_cover_image_upload_api.php on line 14
+[20-Jan-2014 15:29:29 America/Denver] PHP Warning:  md5_file(0): failed to open stream: No such file or directory in /home2/eraytony/public_html/dashboard/video_cover_image_upload_api.php on line 13
+[20-Jan-2014 15:29:30 America/Denver] PHP Warning:  md5_file(http://www.eraytonyali.com/invidio/static/img/music/artists/austin-mahone/What About Love.png): failed to open stream: HTTP request failed! HTTP/1.1 404 Not Found
+ in /home2/eraytony/public_html/dashboard/video_cover_image_upload_api.php on line 14
+[20-Jan-2014 15:30:54 America/Denver] PHP Warning:  md5_file(0): failed to open stream: No such file or directory in /home2/eraytony/public_html/dashboard/video_cover_image_upload_api.php on line 13
+[20-Jan-2014 15:30:55 America/Denver] PHP Warning:  md5_file(http://www.eraytonyali.com/invidio/static/img/music/artists/austin-mahone/What About Love.png): failed to open stream: HTTP request failed! HTTP/1.1 404 Not Found
+ in /home2/eraytony/public_html/dashboard/video_cover_image_upload_api.php on line 14
+[20-Jan-2014 15:34:37 America/Denver] PHP Warning:  md5_file(0): failed to open stream: No such file or directory in /home2/eraytony/public_html/dashboard/video_cover_image_upload_api.php on line 13
+[20-Jan-2014 15:34:37 America/Denver] PHP Warning:  md5_file(http://www.eraytonyali.com/invidio/static/img/music/artists/austin-mahone/What About Love.png): failed to open stream: HTTP request failed! HTTP/1.1 404 Not Found
+ in /home2/eraytony/public_html/dashboard/video_cover_image_upload_api.php on line 14
+[20-Jan-2014 15:35:39 America/Denver] PHP Warning:  md5_file(0): failed to open stream: No such file or directory in /home2/eraytony/public_html/dashboard/video_cover_image_upload_api.php on line 13
+[20-Jan-2014 15:35:40 America/Denver] PHP Warning:  md5_file(http://www.eraytonyali.com/invidio/static/img/music/artists/austin-mahone/What About Love.png): failed to open stream: HTTP request failed! HTTP/1.1 404 Not Found
+ in /home2/eraytony/public_html/dashboard/video_cover_image_upload_api.php on line 14
+[20-Jan-2014 15:36:24 America/Denver] PHP Warning:  md5_file(0): failed to open stream: No such file or directory in /home2/eraytony/public_html/dashboard/video_cover_image_upload_api.php on line 13
+[20-Jan-2014 15:36:24 America/Denver] PHP Warning:  md5_file(http://www.eraytonyali.com/invidio/static/img/music/artists/austin-mahone/What About Love.png): failed to open stream: HTTP request failed! HTTP/1.1 404 Not Found
+ in /home2/eraytony/public_html/dashboard/video_cover_image_upload_api.php on line 14
+[20-Jan-2014 15:41:19 America/Denver] PHP Warning:  md5_file(0): failed to open stream: No such file or directory in /home2/eraytony/public_html/dashboard/video_cover_image_upload_api.php on line 13
+[20-Jan-2014 15:41:19 America/Denver] PHP Warning:  md5_file(http://www.eraytonyali.com/invidio/static/img/music/artists/austin-mahone/What About Love.png): failed to open stream: HTTP request failed! HTTP/1.1 404 Not Found
+ in /home2/eraytony/public_html/dashboard/video_cover_image_upload_api.php on line 14
+[20-Jan-2014 15:49:47 America/Denver] PHP Warning:  md5_file(0): failed to open stream: No such file or directory in /home2/eraytony/public_html/dashboard/video_cover_image_upload_api.php on line 13
+[20-Jan-2014 15:49:47 America/Denver] PHP Warning:  md5_file(http://www.eraytonyali.com/invidio/static/img/music/artists/austin-mahone/What About Love.png): failed to open stream: HTTP request failed! HTTP/1.1 404 Not Found
+ in /home2/eraytony/public_html/dashboard/video_cover_image_upload_api.php on line 14
+[20-Jan-2014 15:53:14 America/Denver] PHP Warning:  md5_file(0): failed to open stream: No such file or directory in /home2/eraytony/public_html/dashboard/video_cover_image_upload_api.php on line 13
+[20-Jan-2014 15:53:15 America/Denver] PHP Warning:  md5_file(http://www.eraytonyali.com/invidio/static/img/music/artists/austin-mahone/What About Love.png): failed to open stream: HTTP request failed! HTTP/1.1 404 Not Found
+ in /home2/eraytony/public_html/dashboard/video_cover_image_upload_api.php on line 14
+[20-Jan-2014 15:57:12 America/Denver] PHP Warning:  md5_file(0): failed to open stream: No such file or directory in /home2/eraytony/public_html/dashboard/video_cover_image_upload_api.php on line 13
+[20-Jan-2014 15:57:13 America/Denver] PHP Warning:  md5_file(http://www.eraytonyali.com/invidio/static/img/music/artists/austin-mahone/What About Love.png): failed to open stream: HTTP request failed! HTTP/1.1 404 Not Found
+ in /home2/eraytony/public_html/dashboard/video_cover_image_upload_api.php on line 14
+[20-Jan-2014 15:59:54 America/Denver] PHP Warning:  md5_file(0): failed to open stream: No such file or directory in /home2/eraytony/public_html/dashboard/video_cover_image_upload_api.php on line 13
+[20-Jan-2014 15:59:54 America/Denver] PHP Warning:  md5_file(http://www.eraytonyali.com/invidio/static/img/music/artists/austin-mahone/What About Love.png): failed to open stream: HTTP request failed! HTTP/1.1 404 Not Found
+ in /home2/eraytony/public_html/dashboard/video_cover_image_upload_api.php on line 14
+[20-Jan-2014 16:01:55 America/Denver] PHP Warning:  md5_file(0): failed to open stream: No such file or directory in /home2/eraytony/public_html/dashboard/video_cover_image_upload_api.php on line 13
+[20-Jan-2014 16:01:55 America/Denver] PHP Warning:  md5_file(http://www.eraytonyali.com/invidio/static/img/music/artists/austin-mahone/What About Love.png): failed to open stream: HTTP request failed! HTTP/1.1 404 Not Found
+ in /home2/eraytony/public_html/dashboard/video_cover_image_upload_api.php on line 14
+[20-Jan-2014 16:04:11 America/Denver] PHP Warning:  md5_file(0): failed to open stream: No such file or directory in /home2/eraytony/public_html/dashboard/video_cover_image_upload_api.php on line 13
+[20-Jan-2014 16:04:11 America/Denver] PHP Warning:  md5_file(http://www.eraytonyali.com/invidio/static/img/music/artists/austin-mahone/What About Love.png): failed to open stream: HTTP request failed! HTTP/1.1 404 Not Found
+ in /home2/eraytony/public_html/dashboard/video_cover_image_upload_api.php on line 14
+[20-Jan-2014 16:05:14 America/Denver] PHP Warning:  md5_file(0): failed to open stream: No such file or directory in /home2/eraytony/public_html/dashboard/video_cover_image_upload_api.php on line 13
+[20-Jan-2014 16:05:14 America/Denver] PHP Warning:  md5_file(http://www.eraytonyali.com/invidio/static/img/music/artists/austin-mahone/What About Love.png): failed to open stream: HTTP request failed! HTTP/1.1 404 Not Found
+ in /home2/eraytony/public_html/dashboard/video_cover_image_upload_api.php on line 14
+[20-Jan-2014 16:07:26 America/Denver] PHP Warning:  md5_file(0): failed to open stream: No such file or directory in /home2/eraytony/public_html/dashboard/video_cover_image_upload_api.php on line 13
+[20-Jan-2014 16:07:26 America/Denver] PHP Warning:  md5_file(http://www.eraytonyali.com/invidio/static/img/music/artists/austin-mahone/What About Love.png): failed to open stream: HTTP request failed! HTTP/1.1 404 Not Found
+ in /home2/eraytony/public_html/dashboard/video_cover_image_upload_api.php on line 14
+[20-Jan-2014 16:12:12 America/Denver] PHP Warning:  md5_file(0): failed to open stream: No such file or directory in /home2/eraytony/public_html/dashboard/video_cover_image_upload_api.php on line 13
+[20-Jan-2014 16:12:12 America/Denver] PHP Warning:  md5_file(http://www.eraytonyali.com/invidio/static/img/music/artists/austin-mahone/What About Love.png): failed to open stream: HTTP request failed! HTTP/1.1 404 Not Found
+ in /home2/eraytony/public_html/dashboard/video_cover_image_upload_api.php on line 14
+[20-Jan-2014 16:14:35 America/Denver] PHP Warning:  md5_file(0): failed to open stream: No such file or directory in /home2/eraytony/public_html/dashboard/video_cover_image_upload_api.php on line 13
+[20-Jan-2014 16:14:35 America/Denver] PHP Warning:  md5_file(http://www.eraytonyali.com/invidio/static/img/music/artists/austin-mahone/What About Love.png): failed to open stream: HTTP request failed! HTTP/1.1 404 Not Found
+ in /home2/eraytony/public_html/dashboard/video_cover_image_upload_api.php on line 14
+[20-Jan-2014 16:16:43 America/Denver] PHP Warning:  md5_file(0): failed to open stream: No such file or directory in /home2/eraytony/public_html/dashboard/video_cover_image_upload_api.php on line 13
+[20-Jan-2014 16:16:43 America/Denver] PHP Warning:  md5_file(http://www.eraytonyali.com/invidio/static/img/music/artists/austin-mahone/What About Love.png): failed to open stream: HTTP request failed! HTTP/1.1 404 Not Found
+ in /home2/eraytony/public_html/dashboard/video_cover_image_upload_api.php on line 14
+[20-Jan-2014 16:26:07 America/Denver] PHP Warning:  md5_file(0): failed to open stream: No such file or directory in /home2/eraytony/public_html/dashboard/video_cover_image_upload_api.php on line 13
+[20-Jan-2014 16:26:07 America/Denver] PHP Warning:  md5_file(http://www.eraytonyali.com/invidio/static/img/music/artists/austin-mahone/What About Love.png): failed to open stream: HTTP request failed! HTTP/1.1 404 Not Found
+ in /home2/eraytony/public_html/dashboard/video_cover_image_upload_api.php on line 14
+[20-Jan-2014 16:27:30 America/Denver] PHP Warning:  md5_file(0): failed to open stream: No such file or directory in /home2/eraytony/public_html/dashboard/video_cover_image_upload_api.php on line 13
+[20-Jan-2014 16:27:30 America/Denver] PHP Warning:  md5_file(http://www.eraytonyali.com/invidio/static/img/music/artists/austin-mahone/What About Love.png): failed to open stream: HTTP request failed! HTTP/1.1 404 Not Found
+ in /home2/eraytony/public_html/dashboard/video_cover_image_upload_api.php on line 14
+[20-Jan-2014 17:01:49 America/Denver] PHP Warning:  md5_file(0): failed to open stream: No such file or directory in /home2/eraytony/public_html/dashboard/video_cover_image_upload_api.php on line 13
+[20-Jan-2014 17:01:49 America/Denver] PHP Warning:  md5_file(http://www.eraytonyali.com/invidio/static/img/music/artists/austin-mahone/What About Love.png): failed to open stream: HTTP request failed! HTTP/1.1 404 Not Found
+ in /home2/eraytony/public_html/dashboard/video_cover_image_upload_api.php on line 14
+[20-Jan-2014 17:02:14 America/Denver] PHP Warning:  md5_file(0): failed to open stream: No such file or directory in /home2/eraytony/public_html/dashboard/video_cover_image_upload_api.php on line 13
+[20-Jan-2014 17:02:14 America/Denver] PHP Warning:  md5_file(http://www.eraytonyali.com/invidio/static/img/music/artists/austin-mahone/What About Love.png): failed to open stream: HTTP request failed! HTTP/1.1 404 Not Found
+ in /home2/eraytony/public_html/dashboard/video_cover_image_upload_api.php on line 14
+[20-Jan-2014 17:09:26 America/Denver] PHP Warning:  md5_file(0): failed to open stream: No such file or directory in /home2/eraytony/public_html/dashboard/video_cover_image_upload_api.php on line 13
+[20-Jan-2014 17:09:26 America/Denver] PHP Warning:  md5_file(http://www.eraytonyali.com/invidio/static/img/music/artists/austin-mahone/What About Love.png): failed to open stream: HTTP request failed! HTTP/1.1 404 Not Found
+ in /home2/eraytony/public_html/dashboard/video_cover_image_upload_api.php on line 14
+[20-Jan-2014 17:10:18 America/Denver] PHP Warning:  md5_file(0): failed to open stream: No such file or directory in /home2/eraytony/public_html/dashboard/video_cover_image_upload_api.php on line 13
+[20-Jan-2014 17:10:18 America/Denver] PHP Warning:  md5_file(http://www.eraytonyali.com/invidio/static/img/music/artists/austin-mahone/What About Love.png): failed to open stream: HTTP request failed! HTTP/1.1 404 Not Found
+ in /home2/eraytony/public_html/dashboard/video_cover_image_upload_api.php on line 14
+[20-Jan-2014 17:11:14 America/Denver] PHP Warning:  md5_file(0): failed to open stream: No such file or directory in /home2/eraytony/public_html/dashboard/video_cover_image_upload_api.php on line 13
+[20-Jan-2014 17:11:15 America/Denver] PHP Warning:  md5_file(http://www.eraytonyali.com/invidio/static/img/music/artists/austin-mahone/What About Love.png): failed to open stream: HTTP request failed! HTTP/1.1 404 Not Found
+ in /home2/eraytony/public_html/dashboard/video_cover_image_upload_api.php on line 14
+[20-Jan-2014 17:12:10 America/Denver] PHP Warning:  md5_file(0): failed to open stream: No such file or directory in /home2/eraytony/public_html/dashboard/video_cover_image_upload_api.php on line 13
+[20-Jan-2014 17:12:10 America/Denver] PHP Warning:  md5_file(http://www.eraytonyali.com/invidio/static/img/music/artists/austin-mahone/What About Love.png): failed to open stream: HTTP request failed! HTTP/1.1 404 Not Found
+ in /home2/eraytony/public_html/dashboard/video_cover_image_upload_api.php on line 14
+[20-Jan-2014 17:12:41 America/Denver] PHP Warning:  md5_file(0): failed to open stream: No such file or directory in /home2/eraytony/public_html/dashboard/video_cover_image_upload_api.php on line 13
+[20-Jan-2014 17:12:42 America/Denver] PHP Warning:  md5_file(http://www.eraytonyali.com/invidio/static/img/music/artists/austin-mahone/What About Love.png): failed to open stream: HTTP request failed! HTTP/1.1 404 Not Found
+ in /home2/eraytony/public_html/dashboard/video_cover_image_upload_api.php on line 14
+[20-Jan-2014 17:15:55 America/Denver] PHP Warning:  md5_file(0): failed to open stream: No such file or directory in /home2/eraytony/public_html/dashboard/video_cover_image_upload_api.php on line 13
+[20-Jan-2014 17:15:55 America/Denver] PHP Warning:  md5_file(http://www.eraytonyali.com/invidio/static/img/music/artists/austin-mahone/What About Love.png): failed to open stream: HTTP request failed! HTTP/1.1 404 Not Found
+ in /home2/eraytony/public_html/dashboard/video_cover_image_upload_api.php on line 14
+[20-Jan-2014 17:19:26 America/Denver] PHP Warning:  md5_file(0): failed to open stream: No such file or directory in /home2/eraytony/public_html/dashboard/video_cover_image_upload_api.php on line 13
+[20-Jan-2014 17:19:26 America/Denver] PHP Warning:  md5_file(http://www.eraytonyali.com/invidio/static/img/music/artists/austin-mahone/What About Love.png): failed to open stream: HTTP request failed! HTTP/1.1 404 Not Found
+ in /home2/eraytony/public_html/dashboard/video_cover_image_upload_api.php on line 14
+[20-Jan-2014 17:20:59 America/Denver] PHP Warning:  md5_file(0): failed to open stream: No such file or directory in /home2/eraytony/public_html/dashboard/video_cover_image_upload_api.php on line 13
+[20-Jan-2014 17:20:59 America/Denver] PHP Warning:  md5_file(http://www.eraytonyali.com/invidio/static/img/music/artists/austin-mahone/What About Love.png): failed to open stream: HTTP request failed! HTTP/1.1 404 Not Found
+ in /home2/eraytony/public_html/dashboard/video_cover_image_upload_api.php on line 14
+[20-Jan-2014 17:24:32 America/Denver] PHP Warning:  md5_file(0): failed to open stream: No such file or directory in /home2/eraytony/public_html/dashboard/video_cover_image_upload_api.php on line 13
+[20-Jan-2014 17:24:32 America/Denver] PHP Warning:  md5_file(http://www.eraytonyali.com/invidio/static/img/music/artists/austin-mahone/What About Love.png): failed to open stream: HTTP request failed! HTTP/1.1 404 Not Found
+ in /home2/eraytony/public_html/dashboard/video_cover_image_upload_api.php on line 14
+[20-Jan-2014 17:25:12 America/Denver] PHP Warning:  md5_file(0): failed to open stream: No such file or directory in /home2/eraytony/public_html/dashboard/video_cover_image_upload_api.php on line 13
+[20-Jan-2014 17:25:12 America/Denver] PHP Warning:  md5_file(http://www.eraytonyali.com/invidio/static/img/music/artists/austin-mahone/What About Love.png): failed to open stream: HTTP request failed! HTTP/1.1 404 Not Found
+ in /home2/eraytony/public_html/dashboard/video_cover_image_upload_api.php on line 14
+[20-Jan-2014 17:28:58 America/Denver] PHP Warning:  md5_file(0): failed to open stream: No such file or directory in /home2/eraytony/public_html/dashboard/video_cover_image_upload_api.php on line 13
+[20-Jan-2014 17:28:58 America/Denver] PHP Warning:  md5_file(http://www.eraytonyali.com/invidio/static/img/music/artists/austin-mahone/What About Love.png): failed to open stream: HTTP request failed! HTTP/1.1 404 Not Found
+ in /home2/eraytony/public_html/dashboard/video_cover_image_upload_api.php on line 14
+[20-Jan-2014 17:34:42 America/Denver] PHP Warning:  md5_file(0): failed to open stream: No such file or directory in /home2/eraytony/public_html/dashboard/video_cover_image_upload_api.php on line 13
+[20-Jan-2014 17:34:42 America/Denver] PHP Warning:  md5_file(http://www.eraytonyali.com/invidio/static/img/music/artists/austin-mahone/What About Love.png): failed to open stream: HTTP request failed! HTTP/1.1 404 Not Found
+ in /home2/eraytony/public_html/dashboard/video_cover_image_upload_api.php on line 14
+[20-Jan-2014 17:36:15 America/Denver] PHP Warning:  md5_file(0): failed to open stream: No such file or directory in /home2/eraytony/public_html/dashboard/video_cover_image_upload_api.php on line 13
+[20-Jan-2014 17:36:16 America/Denver] PHP Warning:  md5_file(http://www.eraytonyali.com/invidio/static/img/music/artists/austin-mahone/What About Love.png): failed to open stream: HTTP request failed! HTTP/1.1 404 Not Found
+ in /home2/eraytony/public_html/dashboard/video_cover_image_upload_api.php on line 14
+[20-Jan-2014 17:37:24 America/Denver] PHP Warning:  md5_file(0): failed to open stream: No such file or directory in /home2/eraytony/public_html/dashboard/video_cover_image_upload_api.php on line 13
+[20-Jan-2014 17:37:24 America/Denver] PHP Warning:  md5_file(http://www.eraytonyali.com/invidio/static/img/music/artists/austin-mahone/What About Love.png): failed to open stream: HTTP request failed! HTTP/1.1 404 Not Found
+ in /home2/eraytony/public_html/dashboard/video_cover_image_upload_api.php on line 14
+[20-Jan-2014 17:39:54 America/Denver] PHP Warning:  md5_file(0): failed to open stream: No such file or directory in /home2/eraytony/public_html/dashboard/video_cover_image_upload_api.php on line 13
+[20-Jan-2014 17:39:54 America/Denver] PHP Warning:  md5_file(http://www.eraytonyali.com/invidio/static/img/music/artists/austin-mahone/What About Love.png): failed to open stream: HTTP request failed! HTTP/1.1 404 Not Found
+ in /home2/eraytony/public_html/dashboard/video_cover_image_upload_api.php on line 14
+[20-Jan-2014 17:46:51 America/Denver] PHP Warning:  md5_file(0): failed to open stream: No such file or directory in /home2/eraytony/public_html/dashboard/video_cover_image_upload_api.php on line 13
+[20-Jan-2014 17:47:01 America/Denver] PHP Warning:  md5_file(0): failed to open stream: No such file or directory in /home2/eraytony/public_html/dashboard/video_cover_image_upload_api.php on line 13
+[20-Jan-2014 17:53:46 America/Denver] PHP Warning:  md5_file(0): failed to open stream: No such file or directory in /home2/eraytony/public_html/dashboard/video_cover_image_upload_api.php on line 13
+[20-Jan-2014 17:56:31 America/Denver] PHP Warning:  md5_file(0): failed to open stream: No such file or directory in /home2/eraytony/public_html/dashboard/video_cover_image_upload_api.php on line 13
+[20-Jan-2014 17:59:14 America/Denver] PHP Warning:  md5_file(0): failed to open stream: No such file or directory in /home2/eraytony/public_html/dashboard/video_cover_image_upload_api.php on line 13
+[20-Jan-2014 18:00:47 America/Denver] PHP Warning:  md5_file(0): failed to open stream: No such file or directory in /home2/eraytony/public_html/dashboard/video_cover_image_upload_api.php on line 13
+[20-Jan-2014 18:03:12 America/Denver] PHP Warning:  md5_file(0): failed to open stream: No such file or directory in /home2/eraytony/public_html/dashboard/video_cover_image_upload_api.php on line 13
+[20-Jan-2014 18:03:50 America/Denver] PHP Warning:  md5_file(0): failed to open stream: No such file or directory in /home2/eraytony/public_html/dashboard/video_cover_image_upload_api.php on line 13
+[20-Jan-2014 18:03:55 America/Denver] PHP Warning:  md5_file(0): failed to open stream: No such file or directory in /home2/eraytony/public_html/dashboard/video_cover_image_upload_api.php on line 13
+[20-Jan-2014 18:06:19 America/Denver] PHP Warning:  md5_file(0): failed to open stream: No such file or directory in /home2/eraytony/public_html/dashboard/video_cover_image_upload_api.php on line 13
+[20-Jan-2014 18:09:32 America/Denver] PHP Warning:  md5_file(0): failed to open stream: No such file or directory in /home2/eraytony/public_html/dashboard/video_cover_image_upload_api.php on line 13
