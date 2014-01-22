@@ -29,10 +29,6 @@ JSON_outbound.look = [];
     // ----------------------------- 
 
 jQuery(document).ready(function() { 
-    if (StackMob.getLoggedInUser() == null){
-        window.location.href = 'login.html';
-    }
-
     App.init();
     FormWizard.init();
 

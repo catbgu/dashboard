@@ -6,7 +6,6 @@
 <head>
 	<meta charset="utf-8" />
 	<title>Inspired | Dashboard</title>
-
 	<link href="assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
 	<link href="assets/plugins/bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet" type="text/css"/>
 	<link href="assets/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
@@ -25,6 +24,7 @@
 	<link rel="stylesheet" type="text/css" href="assets/plugins/jquery-tags-input/jquery.tagsinput.css" />	
 	<link rel="shortcut icon" href="favicon.ico" />
 </head>
+
 <body class="page-header-fixed page-sidebar-fixed">
 	<!-- BEGIN HEADER -->   
 	<div class="header navbar navbar-inverse navbar-fixed-top">
@@ -199,7 +199,8 @@
 																								<div class="control-group">
 																									<label class="control-label">Image Upload</label>
 																									<div class="controls">
-																										<div class="fileupload fileupload-new" data-provides="fileupload"><input type="hidden" value="" name="">
+																										<div class="fileupload fileupload-new" data-provides="fileupload">
+																										<input type="hidden" value="" name=""/>
 																											<div class="fileupload-new thumbnail" style="width: 200px; height: 150px;">
 																												<img src="http://www.placehold.it/200x150/EFEFEF/AAAAAA&amp;text=no+image" alt="">
 																											</div>
@@ -207,7 +208,7 @@
 																											<div>
 																												<span class="btn btn-file"><span class="fileupload-new">Select image</span>
 																												<span class="fileupload-exists">Change</span>
-																												<input type="file" class="default" name="datafile"></span>
+																												<input type="file" class="default" name="datafile"/></span>
 																												<a href="#" id="remove-new-artist-btn" class="btn fileupload-exists" data-dismiss="fileupload">Remove</a>
 																											</div>
 																											<div id="artist_image_upload_iframe"></div>
@@ -459,7 +460,7 @@
 			</span>
 		</div>
 	</div>
-	
+
 	<script src="assets/plugins/jquery-1.10.1.min.js" type="text/javascript"></script>
 	<script src="assets/plugins/jquery-migrate-1.2.1.min.js" type="text/javascript"></script>
 	<script src="assets/plugins/jquery-ui/jquery-ui-1.10.1.custom.min.js" type="text/javascript"></script>      
@@ -490,6 +491,7 @@
 	<script src="assets/scripts/form-wizard.js"></script> 
 	<script src="assets/scripts/custom-landing.js"></script>  
 	<script src="assets/scripts/fileUpload.js"></script> 
+	<script src="assets/scripts/auth.js"></script> 
 
 	<script type="text/javascript" src="http://static.stackmob.com/js/stackmob-js-0.9.2-bundled-min.js"></script>
 	<script type="text/javascript">

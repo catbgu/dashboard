@@ -335,6 +335,19 @@ var FormWizard = function () {
 
                 var look = StackMob.Model.extend({ schemaName: 'Look' });
                 var looks = StackMob.Collection.extend({ model: look }); 
+                var lookitems = new looks();
+                var itemset = new StackMob.Collection.Query();
+                var video_url = /[^=]*$/.exec(JSON_outbound.music_video_data.video_URL)[0];
+                itemset.equals('video_url', video_url);
+                lookitems.query(itemset, {
+                    success: function(results) {
+                        var resultsAsJSON = results.toJSON();
+                        for (s = 0; s < resultsAsJSON.length; s++) {
+                            var destroylooks = new look({"Look_id": resultsAsJSON[s].look_id});
+                            destroylooks.destroy();
+                        }
+                    }
+                });
                 var description = '';
                 var image = '';
                 var productUPC = '';
@@ -367,7 +380,6 @@ var FormWizard = function () {
                                 buyURL          = JSON_outbound.look[i].product_group[c][d].retailers.buyURL;
                                 price           = JSON_outbound.look[i].product_group[c][d].retailers.price;
                                 retailerLogo    = JSON_outbound.look[i].product_group[c][d].retailers.retailerLogo;
-                                retailerLogo    = JSON_outbound.look[i].product_group[c][d].retailers.retailerLogo;
                                 retailerName    = JSON_outbound.look[i].product_group[c][d].retailers.retailerName;
 
                                 mylook.video_url.push(video_url);
@@ -392,7 +404,6 @@ var FormWizard = function () {
                     }
 
                     if (JSON_outbound.look[i].product_group.length == ready_to_submit) {
-                        var video_url = /[^=]*$/.exec(JSON_outbound.music_video_data.video_URL)[0];
                         var SEO_keywords = $("#seo-tags").val();
                         var SEO_descriptions = $("#seo-description").val();
                         var video_featured_data = $('.switch input').prop('checked');
@@ -417,7 +428,6 @@ var FormWizard = function () {
                         items.query(id_exist, {
                             success: function(results) {
                                 var resultsAsJSON = results.toJSON();
-                                console.debug(resultsAsJSON);
                                 if(resultsAsJSON.length > 0)
                                 {
                                     //update
@@ -431,10 +441,10 @@ var FormWizard = function () {
                                         SEO_description: SEO_descriptions 
                                     }, {
                                         success: function(model) {
-                                            console.debug(model.toJSON());
+                                            // console.debug(model.toJSON());
                                         },
                                         error: function(model, response) {
-                                            console.debug(response);
+                                            // console.debug(response);
                                         }
                                     });
                                 } else {
@@ -443,7 +453,7 @@ var FormWizard = function () {
                                         success: function(model) {
                                         },
                                         error: function(model, response) {
-                                            console.debug(response);
+                                            // console.debug(response);
                                         }
                                     });
                                 }
@@ -451,7 +461,6 @@ var FormWizard = function () {
                             }
                         });
 
-                        
 
                         var all_looks = new look({
                             video_url: video_url,
@@ -469,7 +478,6 @@ var FormWizard = function () {
                             success: function(model) {
                                 $('#show_modal').click();
                                 $('.modal-body > p').text('Video curation saved!'); 
-
                                 window.setTimeout(function () {
                                     //empty localStorage
                                     localStorage.removeItem('jsonObject');                                     
@@ -478,7 +486,9 @@ var FormWizard = function () {
                                 }, 1500);                                 
                             },
                             error: function(model, response) {
-                                alert("Error POST: " + response);
+                                console.debug(response);
+                                console.debug(model);
+
                             }
                         });
                     }  
