@@ -31,6 +31,13 @@ JSON_outbound.look = [];
 jQuery(document).ready(function() { 
     App.init();
     FormWizard.init();
+    last_step = false;
+
+    window.onbeforeunload = function() {
+        if ($('#video_title_id').val() != "" && last_step == false){
+            return 'Your work isn\'t save yet and it will be lost!';
+        }
+    };
 
     //GET username from StackMob
     var curator_name = StackMob.Model.extend({ schemaName: 'Curators' });
@@ -56,6 +63,13 @@ jQuery(document).ready(function() {
         localStorage.setItem('ARTIST_IMG_PATH', artist_name_data);
         localStorage.setItem('VIDEO_TITLE_DATA', video_title_data);
     }
+
+    $('#youtubeID').keypress(function (e) {
+        if (e.which == 13) {
+            $('#youtube-but').click();
+            return false;
+        }
+    });    
    
     $('#youtube-but').on("click", function(e) {
         e.preventDefault();
@@ -76,8 +90,6 @@ jQuery(document).ready(function() {
             App.unblockUI(el);   
             $('#show_modal').click();
             $('.modal-body > p').text('You might want to try again since I couldn\'t find any YouTube videos that has the ID you input');      
-            
-            // $('.alert-error').css('display','block');
             return;
         }
         $.getScript('http://gdata.youtube.com/feeds/api/videos/' + encodeURIComponent(videoid) + '?v=2&alt=json-in-script&callback=youtubeDataCallback');
@@ -95,7 +107,6 @@ jQuery(document).ready(function() {
     var items = new artists();
     var q = new StackMob.Collection.Query();
     q.orderAsc('artist_name');
-
     items.query(q, {
         success: function(results) {
             //converting Collection to JSON and iterating it the traditional way
@@ -112,32 +123,45 @@ jQuery(document).ready(function() {
         var new_artist = $('#new_artist_name').val();
         var my_new_artist = StackMob.Model.extend({ schemaName: 'Artist' });
         var artist_entry = new my_new_artist({ artist_name: new_artist, cover_image: 'cover.png' });
-        artist_entry.create({
-            success: function(model) {
-                var existing_artists = $('.select2-search-choice').text().replace(/\    /g, ',').replace(/\,,/g, '-').replace(/\,/g, '').split('-');
-                var newval = '[';
-                for(var i = 0; i < existing_artists.length; i++) {
-                    newval += '{"id": '+ i +', "text": \"' + existing_artists[i] + '\"},';
-                }
-                newval += '{"id": 1001, "text": \"'+ new_artist +'\"}]';
-                var newdata = jQuery.parseJSON(newval);
-                if (newdata[0].text == "") {
-                    $("#artist").select2("data", newdata[1]);
+
+        q.equals('artist_name', new_artist);
+        items.query(q, {
+            success: function(results) {
+                var resultsAsJSON = results.toJSON();
+                if(resultsAsJSON.length > 0){
+                    alert("Artist exists in the database!");
                 } else {
-                    $("#artist").select2("data", newdata);
+                    //CREATE NEW ARTIST FROM LANDING.HTML
+                    artist_entry.create({
+                        success: function(model) {
+                            var existing_artists = $('.select2-search-choice').text().replace(/\    /g, ',').replace(/\,,/g, '-').replace(/\,/g, '').split('-');
+                            var newval = '[';
+                            for(var i = 0; i < existing_artists.length; i++) {
+                                newval += '{"id": '+ i +', "text": \"' + existing_artists[i] + '\"},';
+                            }
+                            newval += '{"id": 1001, "text": \"'+ new_artist +'\"}]';
+                            var newdata = jQuery.parseJSON(newval);
+                            if (newdata[0].text == "") {
+                                $("#artist").select2("data", newdata[1]);
+                            } else {
+                                $("#artist").select2("data", newdata);
+                            }
+
+                            //ADDS TO THE SELECT LIST AFTER ADDING NEW ARTISTS
+                            $( "#artist" ).append("<option>" + new_artist +"</option>");
+
+                            $("#reset_artist_image_form" ).click();
+                            $('#artist_image_upload_iframe').remove();
+                        },
+                        error: function(model, response) {
+                            console.debug(response);
+                        }
+                    });
+                    //UPLOAD ARTIST IMAGE
+                    fileUpload(document.forms.music_video_form,'http://dashboard.inspiredapp.tv/assets/php/artist_cover_image_upload.php?artist_name=' + $("#new_artist_name").val().replace(/\ /g, '-').toLowerCase(),'artist_image_upload_iframe'); return false;
                 }
-
-                //ADDS TO THE SELECT LIST AFTER ADDING NEW ARTISTS
-                $( "#artist" ).append("<option>" + new_artist +"</option>");
-
-                $("#reset_artist_image_form" ).click();
-                $('#artist_image_upload_iframe').remove();
-            },
-            error: function(model, response) {
-                console.debug(response);
             }
         });
-
     });
 
     //reset add new artist form
@@ -150,7 +174,16 @@ jQuery(document).ready(function() {
 
 //-------------------------     TAB 2 FUNCTIONS     -------------------------//
     var look_id = 0;   
-    var selectedProducts = [];
+    var selectedProducts = [];    
+
+    $('.find_item_form input').live('keypress',function (e) {
+        if (e.which == 13) {
+            $(this).blur();
+            $(this).next('.find-item-but').click();
+            return false;
+        }
+    });  
+
     $('a.find-item-but').live("click", function(e) {
         var productKeyword = $(this).siblings('.product').val();
 
@@ -158,18 +191,19 @@ jQuery(document).ready(function() {
             $('#show_modal').click();
             $('.modal-body > p').text('You need to type a keyword');
             
-            $('#skimlinks_results_modal').hide();
+            window.setTimeout(function () {
+                $('#close_skimlinks_results').click();
+            }, 200);             
+
             return false;
         }else{
+            //add spinner
+            App.blockUI($('#skimlinks_results_modal > .modal-body')); 
+
             $(this).addClass('this-is-search');
 
             $('.looks_details_panel_form').html("");
-            $('#skimlinks_results_modal h3').append(productKeyword);
-
-            var thisEl = $(this);
-
-            //add spinner
-            App.blockUI($('#form_wizard_1'));   
+            $('#skimlinks_results_modal h3').append(productKeyword);   
 
             $.ajax({
                 url: "http://api-product.skimlinks.com/query?key=69a92b5e49f3482898ac2395a76f2e3c&q="+ encodeURIComponent(productKeyword) +"&country_code=US&rows=300",
@@ -221,14 +255,16 @@ jQuery(document).ready(function() {
                     }
 
                     window.setTimeout(function () {
-                        App.unblockUI($('#form_wizard_1'));
+                        App.unblockUI($('#skimlinks_results_modal > .modal-body'));
                     }, 100);        
                 },  
                 error: function (request,error) {
-                    alert('Product Search Engine Error!');
+                    $('#close_skimlinks_results').click();
+                    App.unblockUI($('#skimlinks_results_modal > .modal-body'));
+                    
                     window.setTimeout(function () {
-                        App.unblockUI($('#form_wizard_1'));
-                    }, 100);                     
+                        alert('Product Search Engine Error!');
+                    }, 300);                     
                 },
                 getResponseHeader: function (head) {
                     alert(head);
@@ -243,11 +279,13 @@ jQuery(document).ready(function() {
         var product_id_Var = $('.this-is-search').closest('.portlet').find('.product_group:last-child').index();
         if (product_id_Var < 0){ product_id_Var=0; }else{product_id_Var--}
         var look_id_Var = $('.this-is-search').closest('.portlet').attr("id").replace('look_','');
-        
-
+  
         for (var i = 0; i < selectedProducts.length; i++) {
-            if (selectedProducts[i].selected == 1){
-                innerHtml += '<div class="tile image final_product"><div class="corner"></div><div class="check"></div><div class="tile-body"><img src="'+ selectedProducts[i].image +'" alt=""></div><div class="tile-object"><div class="name"><a href="'+ selectedProducts[i].retailers.buyURL +'" target="_blank">'+ selectedProducts[i].title +'</a></div></div></div>';
+            if (selectedProducts[i].selected == 1){              
+                innerHtml += '<div class="tile image final_product"><div class="corner"></div>' + 
+                '<div class="check"></div><div class="tile-body"><img src="'+ selectedProducts[i].image +
+                '" alt=""></div><div class="tile-object"><div class="name"><a href="'+ selectedProducts[i].retailers.buyURL +
+                '" target="_blank">'+ selectedProducts[i].title +'</a></div></div></div>';
                 count++;
 
                 if("undefined" == typeof (JSON_outbound.look[look_id_Var])) {
@@ -265,18 +303,18 @@ jQuery(document).ready(function() {
 
         if (count == 0){
             $('#show_modal').click();
-            $('.modal-body > p').text('Select at list 1 product for your search.');            
+            $('.modal-body > p').text('Select at list 1 product for your search.');
         }else{
             $('.this-is-search').closest('.portlet').find('.product').val("");
             $('.this-is-search').closest('.portlet').find('.looks_details_panel').html("");
             $('.this-is-search').closest('.portlet').find('.product_block').hide();
-            $('.this-is-search').closest('.portlet').find('.portlet-body').append('<div class="alert alert-block alert-success fade in product_group"><button type="button" class="close" data-dismiss="alert"></button>'+ innerHtml.slice(9) +'</div>');            
+            $('.this-is-search').closest('.portlet').find('.portlet-body').append('<div class="alert alert-block alert-success fade in product_group"><button type="button" class="close" data-dismiss="alert"></button>'+ innerHtml.slice(9) +'</div>');
+       
+            $('.find-item-but').removeClass('this-is-search');
+            $('.looks_details_panel_form').html("");
+            $('#skimlinks_results_modal h3').text('Search results for: ');
+            $('.form-actions').show();
         }
-
-        $('.find-item-but').removeClass('this-is-search');
-        $('.looks_details_panel_form').html("");
-        $('#skimlinks_results_modal h3').text('Search results for: ');
-        $('.form-actions').show();
     });
 
     $("#close_skimlinks_results").live("click", function() {
@@ -294,6 +332,7 @@ jQuery(document).ready(function() {
 
             $(this).siblings().removeClass('selected');
             $(this).addClass('selected');
+            $(this).closest('.product_group').css('background','#dff0d8');
 
             //update "selected" to 2, so this product will be the primary selection for the group
             var product_group_Var = $(this).closest('.product_group').index();product_group_Var = product_group_Var-2;       
@@ -301,10 +340,8 @@ jQuery(document).ready(function() {
 
             for (var i = 0; i < JSON_outbound.look[look_id_Var].product_group[product_group_Var].length; i++) {
                 if (i == product_id_Var){
-                    //mark 2
                     JSON_outbound.look[look_id_Var].product_group[product_group_Var][i].selected = 2;
                 }else{
-                    //mark 1
                     JSON_outbound.look[look_id_Var].product_group[product_group_Var][i].selected = 1;
                 }
             }
@@ -376,14 +413,16 @@ jQuery(document).ready(function() {
           ]
         });
     $('#save_new_item').live("click", function(){          
-        if ($('#new_product_title').val() == '' || $('#new_product_description').val() == '' || $('#new_retailer_name').val() == '' || $('#new_retailer_url').val() == '' || $('#new_price').val() == ''){
+        if ($('#new_product_title').val() == '' || $('#new_product_description').val() == '' || $('#new_retailer_name').val() == '' || $('#new_retailer_url').val() == '' || $('#new_price').val() == '' || $('#form_manual_product_entry').find('.fileupload').hasClass('fileupload-new')){
             $('#show_modal').click();
-            $('.modal-body > p').text('You need to fill in all the fields');
+            $('.modal-body > p').text('You need to fill in all the fields and pick an image.');
 
             return false;
         }
 
-        var innerHtml = '<div class="tile image final_product selected just_added"><div class="corner"></div><div class="check"></div><div class="tile-body"><img src="http://www.eraytonyali.com/invidio/static/img/products/' + encodeURIComponent($("#new_product_title").val()) + '.png" alt=""></div><div class="tile-object"><div class="name"><a href="'+ $("#new_retailer_url").val() +'" target="_blank">'+ $("#new_product_title").val() +'</a></div></div></div>';
+        App.blockUI($('#form_manual_product_entry'));
+
+        var innerHtml = '<div class="tile image final_product selected just_added"><div class="corner"></div><div class="check"></div><div class="tile-body"><img src="' + $('#form_manual_product_entry').find('.fileupload-preview img').attr('src') + '" alt=""></div><div class="tile-object"><div class="name"><a href="'+ $("#new_retailer_url").val() +'" target="_blank">'+ $("#new_product_title").val() +'</a></div></div></div>';
         $('.addFromLinkClicked > .portlet-body').append('<div class="alert alert-block alert-success fade in product_group"><button type="button" class="close" data-dismiss="alert"></button>'+ innerHtml +'</div>');
 
         var product_id_Var = $('.just_added').index();product_id_Var--;
@@ -396,19 +435,22 @@ jQuery(document).ready(function() {
         if("undefined" == typeof (JSON_outbound.look[look_id_Var].product_group)) {
             JSON_outbound.look[look_id_Var].product_group = [];
         }                
-        if("undefined" == typeof (JSON_outbound.look[look_id_Var].product_group[product_id_Var])) {
-            JSON_outbound.look[look_id_Var].product_group[product_id_Var] = [];
-        }            
+        if("undefined" == typeof (JSON_outbound.look[look_id_Var].product_group[product_group_Var])) {
+            JSON_outbound.look[look_id_Var].product_group[product_group_Var] = [];
+        }      
+
+        var path_artist_name = JSON_outbound.music_video_data.artist.replace(/\ /g, '-').toLowerCase();
+        var path_video_name = JSON_outbound.music_video_data.video_title.replace(/\ /g, '-').toLowerCase();      
 
         JSON_outbound.look[look_id_Var].product_group[product_group_Var].push({
             productUPC: '',
             title: $("#new_product_title").val(),
             description: $("#new_product_description").val(),
-            image: 'http://www.eraytonyali.com/invidio/static/img/products/' + encodeURIComponent($("#new_product_title").val()) + '.png' ,
+            image: 'http://inspiredapp.tv/img/music/artists/' + path_artist_name + '/' + path_video_name + '/' + encodeURIComponent($("#new_product_title").val()) + '.png' ,
             retailers: {
                 retailerName: $("#new_retailer_name").val(),
                 retailerLogo: 'BUILD_RETAILER_LOGO_URL',
-                price: $("#new_price").val(),
+                price: parseInt($("#new_price").val()),
                 buyURL: 'http://go.redirectingat.com?id=35687X941090&xs=1&url=' + encodeURIComponent($("#new_retailer_url").val())
             },
             selected: 2
@@ -418,17 +460,17 @@ jQuery(document).ready(function() {
             $('#new_image').attr('src','');
             $('.final_product').removeClass('just_added');
             $('#close_new_item').click();
+            $('#form_manual_product_entry').find('.fileupload-exists').click();
+            $('#form_manual_product_entry').find('.fileupload-new img').attr('src','http://www.placehold.it/200x150/EFEFEF/AAAAAA&text=add+image');
+            App.unblockUI($('#form_manual_product_entry'));
         }, 3000);     
 
-
-
-        fileUpload(document.forms.add_new_product_form,'add_new_item.php?product_name=' + $('#new_product_title').val() ,'add_new_item_upload_iframe'); return false;
-
-
+        fileUpload(document.forms.add_new_product_form,'http://dashboard.inspiredapp.tv/assets/php/add_new_item.php?product_name=' + $('#new_product_title').val() + '&artist_name=' + path_artist_name + '&video_name=' + path_video_name ,'add_new_item_upload_iframe'); return false;
     });
 
     $('#close_new_item').live("click", function(){
         $('#new_product_title, #new_product_description, #new_retailer_name, #new_retailer_url, #new_price').val('');
+        $(".portlet").removeClass('addFromLinkClicked');
         $('#new_image').attr('src','');
     });
 
@@ -459,6 +501,7 @@ jQuery(document).ready(function() {
     $('#seo-tags').tagsInput({
         width: 'auto'
     });
+    $('#seo-description').text('default')
 }); 
 
 //src: http://salman-w.blogspot.com/2010/01/retrieve-youtube-video-title.html
@@ -514,5 +557,6 @@ function youtubeDataCallback(data) {
 }
 
 function addFromLinkClicked(el) {
+    $(".portlet").removeClass('addFromLinkClicked');
     $(el).closest(".portlet").addClass('addFromLinkClicked');
 }

@@ -40,7 +40,7 @@
 			<h3 class="form-title">Login to your account</h3>
 			<div class="alert alert-error hide">
 				<button class="close" data-dismiss="alert"></button>
-				<span>Enter any username and password.</span>
+				<span>Enter your Username and Password</span>
 			</div>
 			<div class="control-group">
 				<!--ie8, ie9 does not support html5 placeholder, so we just show field title for that-->
@@ -48,7 +48,7 @@
 				<div class="controls">
 					<div class="input-icon left">
 						<i class="icon-user"></i>
-						<input class="m-wrap placeholder-no-fix" type="text" autocomplete="off" placeholder="Username" name="Username (Email)" id="login_email"/>
+						<input class="m-wrap placeholder-no-fix" type="text" autocomplete="off" placeholder="Username" name="username" id="login_email"/>
 					</div>
 				</div>
 			</div>
@@ -62,8 +62,8 @@
 				</div>
 			</div>
 			<div class="form-actions">
-				<label class="checkbox">
-				<input type="checkbox" name="remember" value="1"/> Remember me
+				<label class="checkbox" id="remember_checkbox">
+				<input id="remember" type="checkbox" name="remember" value="0"/> Remember me
 				</label>
 				<button type="submit" class="btn green pull-right" id="login_button">
 				Login <i class="m-icon-swapright m-icon-white"></i>
@@ -164,16 +164,16 @@
 		</form>
 		<!-- END REGISTRATION FORM -->
 		<!-- BEGIN ENTER FORGOT PASSWORD FORM -->
-		<form class="form-vertical reset-passwd-form">
+		<form class="form-vertical reset-passwd-form" style="display:none">
 			<h3 >Reset Password</h3>
 			<p style="color: orange">Successful! <br>
-			We have resetted your password, and a temporary one has been emailed to you. Use it here and choose a new password immediately.</p> <br>
+			We have reseted your password, and a temporary one has been emailed to you. Use it here and choose a new password immediately.</p> <br>
 			<div class="control-group">
-				<label class="control-label visible-ie8 visible-ie9">Old Password</label>
+				<label class="control-label visible-ie8 visible-ie9">Temporary Password</label>
 				<div class="controls">
 					<div class="input-icon left">
 						<i class="icon-lock"></i>
-						<input class="m-wrap placeholder-no-fix" type="password" autocomplete="off" id="old_password" placeholder="Old Password" name="password"/>
+						<input class="m-wrap placeholder-no-fix" type="password" autocomplete="off" id="old_password" placeholder="Temporary Password" name="password"/>
 					</div>
 				</div>
 			</div>
@@ -231,25 +231,30 @@
 	<script type="text/javascript" src="assets/plugins/select2/select2.min.js"></script>     
 	<!-- END PAGE LEVEL PLUGINS -->
 	<!-- BEGIN PAGE LEVEL SCRIPTS -->
-	<script src="assets/scripts/app.js" type="text/javascript"></script>
 	<script src="assets/scripts/login.js" type="text/javascript"></script> 
 	<!-- END PAGE LEVEL SCRIPTS -->
 	<script type="text/javascript" src="http://static.stackmob.com/js/stackmob-js-0.9.2-bundled-min.js"></script>
 	<script type="text/javascript">
 		//Stackmob Auth
 		StackMob.init({
-			publicKey:        '9c425dc3-688f-420d-804c-9b27f3856353',
-			apiVersion:       0
+			publicKey:        'da5f9b0d-676e-4d57-be03-e8436eb6313b',
+			apiVersion:       1
 		});
 	</script>
 	<script>
 		jQuery(document).ready(function() {     
-		  App.init();
-		  Login.init();
-		
-		 
-		
-		});
+			var remember = $.cookie('remember');
+			if ( remember == 'true' ) {
+				var username = $.cookie('username');
+				var password = $.cookie('password');
+				// autofill the fields
+				$('#login_email').attr("value", username);
+				$('#login_password').attr("value", password);
+				$('#remember').attr('checked','true');
+			}
+
+			Login.init();			
+		});	
 	</script>
 	
 	<!-- END JAVASCRIPTS -->

@@ -57,9 +57,9 @@ jQuery(document).ready(function() {
     
 
     //UPLOAD ARTIST IMAGE
-    $("#submit-artist").on('click', function() {
-        fileUpload(this.form,'artist_cover_image_upload.php?artist_name=' + $("#new_artist_name").val().replace(/\ /g, '-').toLowerCase(),'artist_image_upload_iframe'); return false;
-    });
+    // $("#submit-artist").on('click', function() {
+    //     fileUpload(document.forms.music_video_form,'artist_cover_image_upload.php?artist_name=' + $("#new_artist_name").val().replace(/\ /g, '-').toLowerCase(),'artist_image_upload_iframe'); return false;
+    // });
 
     // $("#save_new_item").on('click', function() {
     //     fileUpload(document.forms.add_new_product_form,'add_new_item.php?product_name=' + $('#new_product_title').val() ,'add_new_item_upload_iframe'); return false;
@@ -73,13 +73,13 @@ jQuery(document).ready(function() {
                 var artist_name = $('.select2-search-choice').text().replace(/\    /g, ',').replace(/\,,/g, '-').replace(/\,/g, '').split('-');
                 artist_name = artist_name[0].replace(/\ /g, '-').toLowerCase();
                 var artist_video_title = $('#video_title_id').val();
-                fileUpload(document.forms.music_video_form,'video_cover_image_upload.php?artist_name=' + artist_name + '&cover_name=' + artist_video_title,'video_image_upload_iframe'); return false;
+                fileUpload(document.forms.music_video_form,'http://dashboard.inspiredapp.tv/assets/php/video_cover_image_upload.php?artist_name=' + artist_name + '&cover_name=' + artist_video_title,'video_image_upload_iframe'); return false;
             } else {
                 //upload form youtube api
                 var artist_name = $('.select2-search-choice').text().replace(/\    /g, ',').replace(/\,,/g, '-').replace(/\,/g, '').split('-');
                 artist_name = artist_name[0].replace(/\ /g, '-').toLowerCase();
                 var artist_video_title = $('#video_title_id').val();
-                fileUpload(document.forms.music_video_form,'video_cover_image_upload_api.php?artist_name=' + artist_name + '&cover_name=' + artist_video_title + '&img_url=' + $(".video_cover_image").attr("src"),'video_image_upload_iframe'); return false;
+                fileUpload(document.forms.music_video_form,'http://dashboard.inspiredapp.tv/assets/php/video_cover_image_upload_api.php?artist_name=' + artist_name + '&cover_name=' + artist_video_title + '&img_url=' + $(".video_cover_image").attr("src"),'video_image_upload_iframe'); return false;
             }
         }
         
@@ -89,7 +89,7 @@ jQuery(document).ready(function() {
         var artist_name = $('.select2-search-choice').text().replace(/\    /g, ',').replace(/\,,/g, '-').replace(/\,/g, '').split('-');
         artist_name = artist_name[0].replace(/\ /g, '-').toLowerCase();
         var artist_video_title = $('#video_title_id').val();
-        fileUpload(document.forms.music_video_form,'create_video_music_page.php?artist_name=' + artist_name + '&video_title=' + artist_video_title + '&SEO_description=' +
+        fileUpload(document.forms.music_video_form,'http://dashboard.inspiredapp.tv/assets/php/create_video_music_page.php?artist_name=' + artist_name + '&video_title=' + artist_video_title + '&SEO_description=' +
         $("#seo-description").val() + '&SEO_keywords=' + $("#seo-tags").val() ,'create_video_music_page'); return false;
 
     });

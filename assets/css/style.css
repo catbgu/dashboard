@@ -3501,10 +3501,9 @@ Tiles(new in v1.1.1)
 .tile.image > .tile-body > img{
   width: 100%;
   height: auto;
-  min-height: 100%;
+  /*min-height: 100%;*/
   max-width: 100%;
 }
-
 .tile.image .tile-body h3 {
   display: inline-block;
 }

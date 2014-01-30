@@ -80,7 +80,7 @@
 					</a>
 				</li>
 				<li>
-					<a href="add-edit_artist.html">
+					<a href="artist.html">
 						<i class="icon-user"></i><span class="title">Add/Edit Artist</span>
 					</a>					
 				</li>
@@ -238,9 +238,10 @@
 	<script src="assets/scripts/auth.js"></script> 
 	<script type="text/javascript" src="http://static.stackmob.com/js/stackmob-js-0.9.2-bundled-min.js"></script>
 	<script type="text/javascript">
+		//Stackmob Auth
 		StackMob.init({
-		publicKey:        '9c425dc3-688f-420d-804c-9b27f3856353',
-		apiVersion:       0
+			publicKey:        'da5f9b0d-676e-4d57-be03-e8436eb6313b',
+			apiVersion:       1
 		});
 	</script>
 	<!-- END PAGE LEVEL SCRIPTS -->
@@ -251,6 +252,21 @@
 		   localStorage.removeItem('jsonObject');
 		});
 	</script>
+
+	<!-- UserVoice JavaScript SDK (only needed once on a page) -->
+	<script>(function(){var uv=document.createElement('script');uv.type='text/javascript';uv.async=true;uv.src='//widget.uservoice.com/mvxK1H9Ob2ErRyuClLQ.js';var s=document.getElementsByTagName('script')[0];s.parentNode.insertBefore(uv,s)})()</script>
+	<script>
+	UserVoice = window.UserVoice || [];
+	UserVoice.push(['showTab', 'classic_widget', {
+	  mode: 'support',
+	  primary_color: '#cc6d00',
+	  link_color: '#007dbf',
+	  tab_label: 'Report an issue',
+	  tab_color: '#ffb948',
+	  tab_position: 'bottom-left',
+	  tab_inverted: false
+	}]);
+	</script>	
 	<!-- END JAVASCRIPTS -->
 </body>
 <!-- END BODY -->

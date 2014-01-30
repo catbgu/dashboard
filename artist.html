@@ -12,27 +12,15 @@
 	<link href="assets/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
 	<link href="assets/css/style-metro.css" rel="stylesheet" type="text/css"/>
 	<link href="assets/css/style.css" rel="stylesheet" type="text/css"/>
-	<link href="assets/css/style-responsive.css" rel="stylesheet" type="text/css"/>
-	<link href="assets/css/custom.css" rel="stylesheet" type="text/css"/>	
+	<link href="assets/css/style-responsive.css" rel="stylesheet" type="text/css"/>	
 	<link href="assets/css/themes/default.css" rel="stylesheet" type="text/css" id="style_color"/>
 	<link href="assets/plugins/uniform/css/uniform.default.css" rel="stylesheet" type="text/css"/>
-	<!-- END GLOBAL MANDATORY STYLES -->
-	<!-- BEGIN PAGE LEVEL STYLES -->
 	<link rel="stylesheet" type="text/css" href="assets/plugins/jquery-ui/jquery-ui-1.10.1.custom.min.css"/>
-	<!-- END PAGE LEVEL STYLES -->
-	<!-- BEGIN PLUGINS USED BY X-EDITABLE -->
-	<link rel="stylesheet" type="text/css" href="assets/plugins/select2/select2_metro.css" />
-	<link rel="stylesheet" type="text/css" href="assets/plugins/bootstrap-wysihtml5/bootstrap-wysihtml5.css" />
-	<link rel="stylesheet" type="text/css" href="assets/plugins/bootstrap-datepicker/css/datepicker.css" />
-	<link rel="stylesheet" type="text/css" href="assets/plugins/bootstrap-timepicker/compiled/timepicker.css" />
-	<link rel="stylesheet" type="text/css" href="assets/plugins/bootstrap-datetimepicker/css/datetimepicker.css" />
+	<link href="assets/css/pages/search.css" rel="stylesheet" type="text/css"/>
 	<link rel="stylesheet" type="text/css" href="assets/plugins/bootstrap-modal/css/bootstrap-modal.css" />
-	<!-- END PLUGINS USED BY X-EDITABLE -->
-	<!-- BEGIN X-EDITABLE PLUGIN-->
+	<link rel="stylesheet" type="text/css" href="assets/plugins/bootstrap-fileupload/bootstrap-fileupload.css" />
 	<link rel="stylesheet" type="text/css" href="assets/plugins/bootstrap-editable/bootstrap-editable/css/bootstrap-editable.css"/>
-	<link rel="stylesheet" type="text/css" href="assets/plugins/bootstrap-editable/inputs-ext/address/address.css"/>
-	<!-- END X-EDITABLE PLUGIN-->
-	<!-- END PAGE LEVEL STYLES -->
+	<link href="assets/css/custom.css" rel="stylesheet" type="text/css"/>
 	<link rel="shortcut icon" href="favicon.ico" />
 </head>
 <!-- END HEAD -->
@@ -87,12 +75,12 @@
 						<i class="icon-home"></i><span class="title">New Curation</span>
 					</a>
 				</li>
-				<li>
+				<li class="active">
 					<a href="artist.html">
 						<i class="icon-user"></i><span class="title">Add/Edit Artist</span>
 					</a>					
 				</li>
-				<li class="last active">
+				<li class='last'>
 					<a href="my_curations.html">
 						<i class="icon-folder-open"></i><span class="title">My Curations</span>
 					</a>					
@@ -103,17 +91,6 @@
 		<!-- END SIDEBAR -->
 		<!-- BEGIN PAGE -->
 		<div class="page-content">
-			<!-- BEGIN SAMPLE PORTLET CONFIGURATION MODAL FORM-->
-			<div id="portlet-config" class="modal hide">
-				<div class="modal-header">
-					<button data-dismiss="modal" class="close" type="button"></button>
-					<h3>portlet Settings</h3>
-				</div>
-				<div class="modal-body">
-					<p>Here will be a configuration form</p>
-				</div>
-			</div>
-			<!-- END SAMPLE PORTLET CONFIGURATION MODAL FORM-->
 			<!-- BEGIN PAGE CONTAINER-->
 			<div class="container-fluid">
 				<!-- BEGIN PAGE HEADER-->
@@ -132,20 +109,79 @@
 					<div class="span12">
 						<div class="portlet box yellow">
 							<div class="portlet-title"></div>
-							<div class="portlet-body form" style="min-height: 450px;">
-								<div class="my_curations">
+							<div class="portlet-body form" id='artist_list' style="min-height: 450px;">
+								<!-- search form -->
+								<div class="row-fluid search-forms search-default">
+									<form class="form-search" action="#">
+										<div class="chat-form span6">
+											<div class="input-cont">   
+												<input type="text" placeholder="Search Artist..." class="search m-wrap" />
+											</div>
+											<button type="button" class="btn green">
+											Search &nbsp; 
+											<i class="m-icon-swapright m-icon-white"></i>
+											</button>
+										</div>
+									</form>
 								</div>
+
+								<ul class="list my_curations">
+									<li id='add_new_artist'>
+										<a href='#form_modal10' data-toggle='modal'>Add New Artist</a>
+						            </li>
+								</ul>
+								<ul class="pagination"></ul>
 							</div>
 						</div>
 					</div>
 				</div>
 
-				<!-- confirmation popup: remove selected product from a look -->
-				<div id="dialog_confirm" title="Remove Product Choice?" class="hide">
-					<p><span class="icon icon-warning-sign"></span>
-						Do you want to proceed?
-					</p>
-				</div>					
+				<div id="form_modal10" class="modal hide fade" role="dialog" aria-labelledby="myModalLabel10" aria-hidden="true">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+						<h3 id="myModalLabel10">Add New Music Artist</h3>
+					</div>
+					<div class="modal-body">
+						<div class="row-fluid">
+							<form action="#" class="form-horizontal" id="artist_image_form">
+								<div class="control-group">
+									<label class="control-label" id="control-label-artist">Artist Name</label>
+									<div class="controls">
+										<input type="text" class="span12 m-wrap" id="new_artist_name"/>
+									</div>
+								</div>
+								<div class="control-group">
+									<label class="control-label">Image Upload</label>
+									<div class="controls">
+										<div class="fileupload fileupload-new" data-provides="fileupload">
+										<input type="hidden" value="" name=""/>
+											<div class="fileupload-new thumbnail" style="width: 200px; height: 150px;">
+												<img src="http://www.placehold.it/200x150/1d943b/ffffff&text=add+image" alt="" id="artist_image">
+											</div>
+											<div class="fileupload-preview fileupload-exists thumbnail" style="max-width: 200px; max-height: 150px; line-height: 20px;"></div>
+											<div>
+												<span class="btn btn-file"><span class="fileupload-new">Select image</span>
+												<span class="fileupload-exists">Change</span>
+												<input type="file" class="default" name="datafile"/></span>
+												<a href="#" id="remove-new-artist-btn" class="btn fileupload-exists" data-dismiss="fileupload">Remove</a>
+											</div>
+											<div id="artist_image_upload_iframe"></div>
+										</div>
+									</div>
+
+									<div class="alert alert-error hide">
+										<button class="close" data-dismiss="alert"></button>
+										<span>You need to add both the artist name and an image.</span>
+									</div>
+								</div>		
+								<div class="modal-footer">
+									<button id="reset_artist_image_form" class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+									<button type="submit" class="btn green btn-primary" id="submit-artist" data-dismiss="modal">Save</button>
+								</div>				
+							</form>
+						</div>
+					</div>
+				</div>				
 				<!-- END PAGE CONTENT-->
 			</div>
 			<!-- END PAGE CONTAINER--> 
@@ -180,35 +216,15 @@
 	<script src="assets/plugins/jquery.blockui.min.js" type="text/javascript"></script>  
 	<script src="assets/plugins/jquery.cookie.min.js" type="text/javascript"></script>
 	<script src="assets/plugins/uniform/jquery.uniform.min.js" type="text/javascript" ></script>
-	<!-- END CORE PLUGINS -->
-	<!-- BEGIN PAGE LEVEL PLUGINS -->
-	<!-- BEGIN PLUGINS USED BY X-EDITABLE -->
-	<script type="text/javascript" src="assets/plugins/jquery-validation/dist/jquery.validate.min.js"></script>
-	<script type="text/javascript" src="assets/plugins/jquery-validation/dist/additional-methods.min.js"></script>
-	<script type="text/javascript" src="assets/plugins/bootstrap-wizard/jquery.bootstrap.wizard.min.js"></script>
-	<script type="text/javascript" src="assets/plugins/chosen-bootstrap/chosen/chosen.jquery.min.js"></script>
-	<script type="text/javascript" src="assets/plugins/select2/select2.min.js"></script>
-	<script type="text/javascript" src="assets/plugins/bootstrap-wysihtml5/wysihtml5-0.3.0.js"></script> 
-	<script type="text/javascript" src="assets/plugins/bootstrap-wysihtml5/bootstrap-wysihtml5.js"></script>
-	<script type="text/javascript" src="assets/plugins/bootstrap-datepicker/js/bootstrap-datepicker.js"></script>
-	<script type="text/javascript" src="assets/plugins/bootstrap-datetimepicker/js/bootstrap-datetimepicker.js"></script>
-	<script type="text/javascript" src="assets/plugins/moment.min.js"></script>
-	<script type="text/javascript" src="assets/plugins/jquery.mockjax.js"></script>
-	<script type="text/javascript" src="assets/plugins/jquery.flippy.min.js"></script>
-	<!-- END PLUGINS USED BY X-EDITABLE -->
-	<!-- BEGIN X-EDITABLE PLUGIN -->
-	<script type="text/javascript" src="assets/plugins/bootstrap-editable/bootstrap-editable/js/bootstrap-editable.min.js"></script>
-	<script type="text/javascript" src="assets/plugins/bootstrap-editable/inputs-ext/address/address.js"></script>
-	<script type="text/javascript" src="assets/plugins/bootstrap-editable/inputs-ext/wysihtml5/wysihtml5.js"></script>
 	<script src="assets/plugins/bootstrap-modal/js/bootstrap-modal.js" type="text/javascript" ></script>
 	<script src="assets/plugins/bootstrap-modal/js/bootstrap-modalmanager.js" type="text/javascript" ></script>	
-	<!-- END X-EDITABLE PLUGIN -->
-	<!-- END PAGE LEVEL PLUGINS -->
-	<!-- BEGIN PAGE LEVEL SCRIPTS -->
+	<script type="text/javascript" src="assets/plugins/bootstrap-fileupload/bootstrap-fileupload.js"></script>
 	<script src="assets/scripts/app.js"></script>
-	<script src="assets/scripts/form-wizard.js"></script> 
-	<script src="assets/scripts/form-editable.js"></script> 
 	<script src="assets/scripts/auth.js"></script>  
+	<script src="assets/scripts/list.js"></script> 
+	<script src="assets/scripts/list.pagination.min.js"></script> 
+	<script src="assets/scripts/fileUpload.js"></script> 
+
 	<script type="text/javascript" src="http://static.stackmob.com/js/stackmob-js-0.9.2-bundled-min.js"></script>
 	<script type="text/javascript">
 		//Stackmob Auth
@@ -217,7 +233,7 @@
 			apiVersion:       1
 		});
 	</script> 
-	<script src="assets/scripts/custom-my_curations.js"></script>
+	<script src="assets/scripts/artist.js"></script>
 	<script type="text/javascript">
 		jQuery(document).ready(function() {       
 		   localStorage.removeItem('jsonObject');
